@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <div class="container">
+    <h1>Dynamic Resume Builder</h1>
+
+    <!-- Form for User Input -->
+    <form id="resume-form" enctype="multipart/form-data">
+      <!-- Personal Information -->
+      <h2>Personal Information</h2>
+      
+      <label for="profile-pic">Profile Picture:</label>
+      <input type="file" id="profile-pic" name="profile-pic" accept="image/*" />
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+      
+      <!-- Education -->
+      <h2>Education</h2>
+      <label for="education">Education:</label>
+      <input type="text" id="education" name="education" placeholder="Enter your education details" required />
+
+      <!-- Work Experience -->
+      <h2>Work Experience</h2>
+      <label for="work-experience">Work Experience:</label>
+      <textarea id="work-experience" name="work-experience" rows="4" placeholder="Describe your work experience" required></textarea>
+
+      <!-- Skills -->
+      <h2>Skills</h2>
+      <label for="skills">Skills (comma-separated):</label>
+      <input type="text" id="skills" name="skills" placeholder="Enter your skills" required />
+      
+      <button type="submit" class="generate-button">Generate Resume</button>
+    </form>
+
+    <!-- Dynamic Resume Section -->
+    <div id="resume-output" class="resume hidden">
+      <section id="personal-info-output" class="resume-section"></section>
+      <section id="education-output" class="resume-section"></section>
+      <section id="work-experience-output" class="resume-section"></section>
+      <section id="skills-output" class="resume-section"></section>
+
+      <!-- Share and Download Buttons -->
+      <div id="share-link" class="hidden">
+        <label for="resume-url">Resume URL:</label>
+        <input type="text" id="resume-url" readonly />
+        <button id="copy-link">Copy Link</button>
+      </div>
+      <button id="download-resume" class="print-button">Download Resume</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
